@@ -1,0 +1,50 @@
+extends layout.pug
+block content 
+    include header
+    main.container 
+        section#metrics 
+            div.cards 
+                h3 
+                    span Abertos 
+                p#open_calls 
+                    img(src="/static/img/icons_app/arrow_main.png" alt="") 
+                    span 10
+
+            div.cards 
+                h3 
+                    span Finalizados 
+                p#open_calls
+                    img(src="/static/img/icons_app/arrow_main.png" alt="") 
+                    span 110
+
+            div.cards.all
+                h3 
+                    span Todos
+                p#open_calls 
+                    img(src="/static/img/icons_app/arrow_main_green.png" alt="") 
+                    span 200
+        secton#calls 
+            a(href="#" class="button new" id="button-modal") + Novo chamado
+            table#data-table 
+                thead 
+                    tr 
+                        th 
+                            b Código
+                        th 
+                            b Usuário 
+                        th 
+                            b Empresa
+                        th 
+                            b Status
+                        th 
+                            b Ação
+                tbody 
+                    tr 
+                        td 
+                            b 12345
+                        td phsousa 
+                        td Shopping Rio Poty
+                        td Aberto
+                        td 
+                            a(href="#" class="resolve-call") Resolver
+
