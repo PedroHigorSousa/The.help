@@ -5,10 +5,10 @@ block content
         section#metrics 
             div.cards 
                 h3 
-                    span Abertos 
+                    span Aguardando 
                 p#open_calls 
                     img(src="/static/img/icons_app/arrow_main.png" alt="") 
-                    span 10
+                    span #{datas_index.open_calls} 
 
             div.cards 
                 h3 
@@ -37,14 +37,19 @@ block content
                         th 
                             b Status
                         th 
+                            b Prioridade
+                        th 
                             b Ação
                 tbody 
                     tr 
-                        td 
-                            b 12345
-                        td phsousa 
-                        td Shopping Rio Poty
-                        td Aberto
-                        td 
-                            a(href="#" class="resolve-call") Resolver
+                        each call in datas_index.calls 
+                            tr 
+                                td #{call.code}
+                                td #{call.user}
+                                td #{call.company}
+                                td #{call.status}
+                                td #{call.priority}
+                                td 
+                                    a(href="#" class="resolve-call") Resolver
+
 
